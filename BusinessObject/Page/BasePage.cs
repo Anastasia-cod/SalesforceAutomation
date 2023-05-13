@@ -1,7 +1,10 @@
 ﻿using System;
+using Core.Models;
 using Core.Selenium;
+using Core.Selenium.Elements;
 using OpenQA.Selenium;
-namespace SalesforceAutomation.Page
+
+namespace BusinessObject.Page
 {
     public abstract class BasePage
     {

@@ -2,13 +2,13 @@
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Firefox;
-using SalesforceAutomation.Page;
+using BusinessObject.Page;
 using Core.Selenium;
 using BusinessObject;
 namespace SalesforceAutomation.Test
 {
-	public class BaseTest
-	{
+    public class BaseTest
+    {
         public LoginPage LoginPage { get; set; }
 
         [SetUp]
