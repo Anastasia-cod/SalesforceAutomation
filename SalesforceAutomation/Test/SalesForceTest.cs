@@ -19,7 +19,6 @@ namespace SalesforceAutomation.Test
             LoginPage
                 .OpenLoginPage()
                 .Login(standartUser)
-                .OpenAccountsPage()
                 .CreateAccount(standartUser.Name, standartUser.Password);           
 
             //Assert

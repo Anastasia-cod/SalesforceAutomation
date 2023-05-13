@@ -6,8 +6,8 @@ using OpenQA.Selenium;
 
 namespace BusinessObject.Page
 {
-	public class AccountsPage
-	{
+    public class AccountsPage
+    {
         Button newButton = new Button(By.XPath("//div[@title='New']"));
         Button save = new Button(By.XPath("//button[@name='SaveEdit']"));
         Input accountName = new Input(By.XPath("//*[@id=\"input-560\"]"));
@@ -19,13 +19,9 @@ namespace BusinessObject.Page
             return this;
         }
 
-        public void ClickNewButton()
-        {
-            newButton.Click();
-        }
-
         public void CreateAccount(string accountName, string websiteName)
         {
+            newButton.Click();
             this.accountName.FillIn(accountName);
             website.FillIn(websiteName);
             save.Click();
