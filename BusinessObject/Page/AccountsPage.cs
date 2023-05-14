@@ -11,7 +11,6 @@ namespace BusinessObject.Page
     {
         Button newButton = new Button(By.XPath("//div[@title='New']"));
         Button saveNewAccount = new Button("SaveEdit");
-        Button saveAnyActionWithAccount = new Button(By.XPath("//button[text()='Save']"));
         Button deleteButton = new Button(By.XPath("//button[@title='Delete']"));
         Input accountName = new Input("Name");
         Input accountNumber = new Input("AccountNumber");
@@ -21,7 +20,7 @@ namespace BusinessObject.Page
         Input billingStreet = new Input(By.XPath("//textarea[@name='street']"));
         Dropdown ownershipDropdown = new Dropdown("Ownership, --None--");
         Dropdown typeDropdown = new Dropdown("Type, --None--");
-        Dropdown actionDropdown = new Dropdown(By.XPath("//a[@class ='rowActionsPlaceHolder slds-button slds-button--icon-x-small slds-button--icon-border-filled keyboardMode--trigger']"));
+        Dropdown actionDropdown = new Dropdown(By.XPath("//div[@class='forceVirtualActionMarker forceVirtualAction']"));
         By CountOfAccounts = By.XPath("//span[@class='countSortedByFilteredBy']");
 
         public AccountsPage OpenAccountsPage()
@@ -47,20 +46,20 @@ namespace BusinessObject.Page
 
         public AccountsPage EditAccount(Account account)
         {
-            actionDropdown.SelectForActionWithAccount(account.editAccount);
+            actionDropdown.SelectForAction(account.editAccount);
             accountName.UpdateValue(account.AccountName);
             accountNumber.UpdateValue(account.AccountNumber);
             accountSite.UpdateValue(account.AccountSite);
             phone.UpdateValue(account.Phone);
             website.UpdateValue(account.Website);
             billingStreet.UpdateValue(account.BillingStreet);
-            saveAnyActionWithAccount.Click();
+            saveNewAccount.Click();
             return this;
         }
 
         public AccountsPage DeleteAccount(Account account)
         {
-            actionDropdown.SelectForActionWithAccount(account.deleteAccount);
+            actionDropdown.SelectForAction(account.deleteAccount);
             deleteButton.Click();
             return this;
         }

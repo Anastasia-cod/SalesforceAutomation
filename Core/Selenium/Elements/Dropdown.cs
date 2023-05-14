@@ -19,10 +19,10 @@ namespace Core.Selenium.Elements
             Browser.Driver.FindElement(By.XPath($"//lightning-base-combobox-item[@data-value='{option}']")).Click();
         }
 
-        public void SelectForActionWithAccount(string option)
+        public void SelectForAction(string option)
         {
             Browser.Driver.FindElement(Locator).Click();
-            Browser.Driver.FindElement(By.XPath($"//lightning-base-combobox-item[@title='{option}']")).Click();
+            Browser.Driver.FindElement(By.XPath($"//a[@data-target-selection-name='sfdc:StandardButton.Account.{option}']")).Click();
         }
 
         public void SelectForContact()
@@ -31,7 +31,11 @@ namespace Core.Selenium.Elements
             Browser.Driver.FindElement(By.XPath($"//span[@class='slds-listbox__option-text slds-listbox__option-text_entity']/span")).Click();
         }
 
-        
+        public void SelectForContactAction(string option)
+        {
+            Browser.Driver.FindElement(Locator).Click();
+            Browser.Driver.FindElement(By.XPath($"//a[@title='{option}']")).Click();
+        }
     }
 }
 

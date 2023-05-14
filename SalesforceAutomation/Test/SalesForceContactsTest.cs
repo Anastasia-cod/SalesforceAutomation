@@ -7,17 +7,14 @@ using BusinessObject.Page;
 
 namespace SalesforceAutomation.Test
 {
-	public class SalesForceContactsTest : BaseTest
-	{
-        //public AccountsPage AccountsPage { get; set; }
+    public class SalesForceContactsTest : BaseTest
+    {
+        public AccountsPage AccountsPage { get; set; }
         public ContactsPage ContactsPage { get; set; }
 
         [SetUp]
         public void SetUp()
         {
-            //AccountsPage = new AccountsPage().OpenAccountsPage();
-            //AccountsPage.CreateNewAccount(AccountBuilder.GetRandomAccount());
-
             ContactsPage = new ContactsPage().OpenContactsPage();
         }
 
@@ -26,10 +23,31 @@ namespace SalesforceAutomation.Test
         {
             //var
             //Action
-            ContactsPage.CreateNewContact(AccountBuilder.GetRandomAccount());
+            AccountsPage = new AccountsPage()
+                .OpenAccountsPage()
+                .CreateNewAccount(AccountBuilder.GetRandomAccount());
+
+            ContactsPage.OpenContactsPage().CreateNewContact(AccountBuilder.GetRandomAccount());
             //Assert
         }
 
+        //[Test]
+        //public void EditContact()
+        //{
+        //    //var
+        //    //Action
+        //    ContactsPage.EditContact(AccountBuilder.GetRandomAccount());
+        //    //Assert
+        //}
+
+        //[Test]
+        //public void DeleteContact()
+        //{
+        //    //var
+        //    //Action
+        //    ContactsPage.DeleteContact(AccountBuilder.GetRandomAccount());
+        //    //Assert
+        //}
     }
 }
 

@@ -11,8 +11,10 @@ namespace BusinessObject.Page
     {
         Dropdown salutationDropdown = new Dropdown("Salutation, --None--");
         Dropdown accountNameDropdown = new Dropdown(By.XPath("//input[@placeholder='Search Accounts...']"));
+        Dropdown actionDropdown = new Dropdown(By.XPath("//div[@class='forceVirtualActionMarker forceVirtualAction']"));
         Button newButton = new Button(By.XPath("//div[@title='New']"));
         Button saveNewContact = new Button("SaveEdit");
+        Button deleteButton = new Button(By.XPath("//button[@title='Delete']"));
         Input firstName = new Input("firstName");
         Input lastName = new Input("lastName");
         Input phone = new Input("Phone");
@@ -36,6 +38,22 @@ namespace BusinessObject.Page
             return this;
         }
 
+        public ContactsPage EditContact (Account account)
+        {
+            actionDropdown.SelectForContactAction(account.editAccount);
+            firstName.UpdateValue(account.AccountName);
+            lastName.UpdateValue(account.AccountNumber);
+            phone.UpdateValue(account.Phone);
+            saveNewContact.Click();
+            return this;
+        }
+
+        public ContactsPage DeleteContact(Account account)
+        {
+            actionDropdown.SelectForContactAction(account.deleteAccount);
+            deleteButton.Click();
+            return this;
+        }
     }
 }
 
