@@ -4,6 +4,7 @@ namespace Core.Models
     public class Account
     {
         public string AccountName { get; set; }
+        public string AccountLastName { get; set; }
         public string AccountNumber { get; set; }
         public string AccountSite { get; set; }
         public string Phone { get; set; }
@@ -14,6 +15,7 @@ namespace Core.Models
         public string editAccount = "Edit";
         public string changeOwnerAccount = "Change Owner";
         public string deleteAccount = "Delete";
+        public string salutationContact = "Mrs.";
     }
 }
 

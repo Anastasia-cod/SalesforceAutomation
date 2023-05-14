@@ -12,6 +12,7 @@ namespace Core.Utilities
         public static Account GetRandomAccount() => new()
         {
             AccountName = Faker.Internet.UserName(),
+            AccountLastName = Faker.Internet.UserName(),
             AccountNumber = Faker.Random.Int(3).ToString(),
             AccountSite = Faker.Internet.Url(),
             Phone = Faker.Random.Int(9).ToString(),

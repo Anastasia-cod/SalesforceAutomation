@@ -2,14 +2,15 @@
 using Core.Models;
 using Core.Selenium;
 using Core.Selenium.Elements;
+using NUnit.Framework.Interfaces;
 using OpenQA.Selenium;
 
 namespace BusinessObject.Page
 {
-    public class AccountsPage
+    public class AccountsPage : BasePage
     {
         Button newButton = new Button(By.XPath("//div[@title='New']"));
-        Button saveNewAccount = new Button(By.XPath("//button[@name='SaveEdit']"));
+        Button saveNewAccount = new Button("SaveEdit");
         Button saveAnyActionWithAccount = new Button(By.XPath("//button[text()='Save']"));
         Button deleteButton = new Button(By.XPath("//button[@title='Delete']"));
         Input accountName = new Input("Name");
@@ -21,6 +22,7 @@ namespace BusinessObject.Page
         Dropdown ownershipDropdown = new Dropdown("Ownership, --None--");
         Dropdown typeDropdown = new Dropdown("Type, --None--");
         Dropdown actionDropdown = new Dropdown(By.XPath("//a[@class ='rowActionsPlaceHolder slds-button slds-button--icon-x-small slds-button--icon-border-filled keyboardMode--trigger']"));
+        By CountOfAccounts = By.XPath("//span[@class='countSortedByFilteredBy']");
 
         public AccountsPage OpenAccountsPage()
         {
@@ -37,8 +39,8 @@ namespace BusinessObject.Page
             phone.FillIn(account.Phone);
             website.FillIn(account.Website);
             billingStreet.FillIn(account.BillingStreet);
-            ownershipDropdown.SelectForCreateAcount(account.OwnerShip);
-            typeDropdown.SelectForCreateAcount(account.Type);
+            ownershipDropdown.Select(account.OwnerShip);
+            typeDropdown.Select(account.Type);
             saveNewAccount.Click();
             return this;
         }

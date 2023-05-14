@@ -13,7 +13,7 @@ namespace Core.Selenium.Elements
         {
         }
 
-        public void SelectForCreateAcount(string option)
+        public void Select(string option)
         {
             Browser.Driver.FindElement(Locator).Click();
             Browser.Driver.FindElement(By.XPath($"//lightning-base-combobox-item[@data-value='{option}']")).Click();
@@ -22,8 +22,16 @@ namespace Core.Selenium.Elements
         public void SelectForActionWithAccount(string option)
         {
             Browser.Driver.FindElement(Locator).Click();
-            Browser.Driver.FindElement(By.XPath($"//a[@title='{option}']")).Click();
+            Browser.Driver.FindElement(By.XPath($"//lightning-base-combobox-item[@title='{option}']")).Click();
         }
+
+        public void SelectForContact()
+        {
+            Browser.Driver.FindElement(Locator).Click();
+            Browser.Driver.FindElement(By.XPath($"//span[@class='slds-listbox__option-text slds-listbox__option-text_entity']/span")).Click();
+        }
+
+        
     }
 }
 

@@ -11,6 +11,8 @@ namespace Core.Utilities
 
         public static User StandartUser => new User
         {
+            //Name = "nastyabonybelay@gmail.com",
+            //Password = "74255068A",
             Name = TestContext.Parameters.Get("UserName"),
             Password = TestContext.Parameters.Get("UserPassword"),
         };

@@ -9,7 +9,7 @@ namespace Core.Selenium.Elements
         {
         }
 
-        public Button(string locator) : base($"//input[@name='{locator}']")
+        public Button(string locator) : base($"//button[@name='{locator}']")
         {
         }
     }

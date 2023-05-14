@@ -10,7 +10,7 @@ namespace BusinessObject.Page
     {
         Input userNameInput = new Input("username");
         Input passwordInput = new Input("pw");
-        Button loginButton = new Button("Login");
+        Button loginButton = new Button(By.XPath("//input[@name='Login']"));
 
         public LoginPage OpenLoginPage()
         {
