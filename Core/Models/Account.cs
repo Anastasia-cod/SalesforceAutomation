@@ -14,7 +14,6 @@ namespace Core.Models
         public string editAccount = "Edit";
         public string changeOwnerAccount = "Change Owner";
         public string deleteAccount = "Delete";
-
     }
 }
 

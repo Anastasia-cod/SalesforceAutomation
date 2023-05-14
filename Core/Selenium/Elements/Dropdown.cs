@@ -13,8 +13,6 @@ namespace Core.Selenium.Elements
         {
         }
 
-        //button[contains(@aria-label, 'Ownership')]
-
         public void SelectForCreateAcount(string option)
         {
             Browser.Driver.FindElement(Locator).Click();
