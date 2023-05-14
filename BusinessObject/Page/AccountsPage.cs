@@ -56,9 +56,9 @@ namespace BusinessObject.Page
             return this;
         }
 
-        public AccountsPage DeleteAccount()
+        public AccountsPage DeleteAccount(Account account)
         {
-            actionDropdown.SelectForActionWithAccount("Delete");
+            actionDropdown.SelectForActionWithAccount(account.deleteAccount);
             deleteButton.Click();
             return this;
         }

@@ -11,7 +11,6 @@ namespace SalesforceAutomation.Test
     {
         public AccountsPage AccountsPage { get; set; }
         
-
         [SetUp]
         public void SetUp()
         {            
@@ -26,26 +25,22 @@ namespace SalesforceAutomation.Test
             AccountsPage.CreateNewAccount(AccountBuilder.GetRandomAccount());
 
             //Assert
-
         }
 
-        //[Test]
-        //public void EditFirstCreatedAccount()
-        //{
-        //    //Action
-        //    AccountsPage.EditAccount(AccountBuilder.GetRandomAccount());
+        [Test]
+        public void EditFirstCreatedAccount()
+        {
+            //Action
+            AccountsPage.EditAccount(AccountBuilder.GetRandomAccount());
 
-        //    //Assert
-        //}
+            //Assert
+        }
 
         [Test]
         public void DeleteAccount()
         {
-            //var
-            //var randomAccount = AccountBuilder.GetRandomAccount();
-
             //Action
-            AccountsPage.DeleteAccount();
+            AccountsPage.DeleteAccount(AccountBuilder.GetRandomAccount());
 
             //Assert
         }
