@@ -23,6 +23,12 @@ namespace Core.Selenium.Elements
             Browser.Driver.FindElement(Locator).SendKeys(message);
         }
 
+        public void UpdateValue(string message)
+        {
+            Browser.Driver.FindElement(Locator).Clear();
+            Browser.Driver.FindElement(Locator).SendKeys(message);
+        }
+
         public void Click()
         {
             Browser.Driver.FindElement(Locator).Click();

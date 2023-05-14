@@ -9,7 +9,7 @@ namespace Core.Selenium.Elements
         {
         }
 
-        public Input(string locator) : base($"//span[text()='{locator}']/ancestor::div[contains(@class, 'uiInput')]//input")
+        public Input(string locator) : base($"//input[@name='{locator}']")
         {
         }
     }

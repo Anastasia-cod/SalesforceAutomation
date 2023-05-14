@@ -9,17 +9,43 @@ namespace SalesforceAutomation.Test
 {
     public class SalesForceTest : BaseTest
     {
+        public AccountsPage AccountsPage { get; set; }
+        
+
+        [SetUp]
+        public void SetUp()
+        {            
+            AccountsPage = new AccountsPage();
+            AccountsPage.OpenAccountsPage();
+        }
+
         [Test]
-        public void Test()
+        public void CreateNewAccount()
+        {
+            //Action
+            AccountsPage.CreateNewAccount(AccountBuilder.GetRandomAccount());
+
+            //Assert
+
+        }
+
+        //[Test]
+        //public void EditFirstCreatedAccount()
+        //{
+        //    //Action
+        //    AccountsPage.EditAccount(AccountBuilder.GetRandomAccount());
+
+        //    //Assert
+        //}
+
+        [Test]
+        public void DeleteAccount()
         {
             //var
-            var standartUser = UserBuilder.StandartUser;
+            //var randomAccount = AccountBuilder.GetRandomAccount();
 
             //Action
-            LoginPage
-                .OpenLoginPage()
-                .Login(standartUser)
-                .CreateAccount(standartUser.Name, standartUser.Password);           
+            AccountsPage.DeleteAccount();
 
             //Assert
         }

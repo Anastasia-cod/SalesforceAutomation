@@ -8,11 +8,9 @@ namespace BusinessObject.Page
 {
     public class LoginPage : BasePage
     {
-        Input userNameInput = new Input(By.XPath("//input[@name='username']"));
-        Input passwordInput = new Input(By.XPath("//input[@name='pw']"));
-        Button loginButton = new Button(By.XPath("//input[@name='Login']"));
-
-        //$"//input[@name='{locator}']
+        Input userNameInput = new Input("username");
+        Input passwordInput = new Input("pw");
+        Button loginButton = new Button("Login");
 
         public LoginPage OpenLoginPage()
         {

@@ -2,6 +2,7 @@
 using Bogus;
 using Core.Models;
 using NUnit.Framework;
+
 namespace Core.Utilities
 {
     public static class UserBuilder
